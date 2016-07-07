@@ -17,7 +17,12 @@
 // write your code here
 
 
+var daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
+for day in daysOfTheWeek {
+    
+    print(day)
+}
 
 
 
@@ -27,7 +32,12 @@
  */
 // write your code here
 
+let numDaysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
+for (index, day) in numDaysOfTheWeek.enumerate() {
+    
+    print("\(index + 1). \(day)")
+}
 
 
 
@@ -39,7 +49,13 @@
 // write your code here
 
 
+var emptyArray: [String] = []
 
+if emptyArray.isEmpty {
+    print("The array is empty.")
+} else {
+    print("The array is not empty")
+}
 
 
 
@@ -50,7 +66,14 @@
  */
 // write your code here
 
+var reverseEmptyArray: [String] = []
 
+if !reverseEmptyArray.isEmpty {
+    
+    print("This array has items")
+} else {
+    print("This array is empty.")
+}
 
 
 
@@ -64,7 +87,7 @@
 // write your code here
 
 
-
+print(daysOfTheWeek.count)
 
 
 
@@ -75,7 +98,13 @@
  */
 // write your code here
 
+daysOfTheWeek.append("Saturday")
+daysOfTheWeek.append("Sunday")
 
+for (index, day) in daysOfTheWeek.enumerate() {
+    
+    print("\(index + 1). \(day)")
+}
 
 
 
@@ -86,8 +115,8 @@
  */
 // write your code here
 
-
-
+daysOfTheWeek.removeAtIndex(6)
+daysOfTheWeek.insert("Sunday", atIndex: 0)
 
 
 
@@ -98,8 +127,18 @@
  */
 // write your code here
 
+//Attempt 1
+//for day in daysOfTheWeek {
+//    
+//    day = day.lowercaseString //Cannot do day = day.lowercaseString because for day in day.... creates a 'let' constant.
+//}
 
+for (index, day) in daysOfTheWeek.enumerate() { //Need to enumnerate over the array to change each item.
+    
+    daysOfTheWeek[index] = day.lowercaseString
+}
 
+print(daysOfTheWeek)
 
 
 
@@ -110,7 +149,32 @@
  */
 // write your code here
 
+if daysOfTheWeek.count > 5 {
+    
+    for (index, day) in daysOfTheWeek.enumerate() {
+        
+        if day == "sunday" {
+            daysOfTheWeek.removeAtIndex(index)
+            }
+        else {
+            
+            print("No")
+            //do nothing
+        }
+    }
+    
+    for (index, day) in daysOfTheWeek.enumerate() {
+        if day == "saturday" {
+            daysOfTheWeek.removeAtIndex(index)
+        }
+        else {
+            print("No weekend!")
+        }
+    }
+    
+}
 
+print(daysOfTheWeek)
 
 
 
